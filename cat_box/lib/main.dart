@@ -10,10 +10,9 @@ class CatBoxApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       theme: new ThemeData(
-        primarySwatch: Colors.blue,
-        accentColor: Colors.pinkAccent,
-        fontFamily: 'Ubuntu',
-      ),
+          primarySwatch: Colors.blue,
+          accentColor: Colors.pinkAccent,
+          fontFamily: 'Ubuntu'),
       home: new CatList(),
     );
   }

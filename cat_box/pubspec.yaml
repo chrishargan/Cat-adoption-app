@@ -23,6 +23,9 @@ flutter:
   uses-material-design: true
   fonts: 
     - family: Ubuntu
-    - fonts:
+      fonts:
       - asset: fonts/Ubuntu-Regular.ttf
       - asset: fonts/Ubuntu-Bold.ttf
+
+  assets:
+    - assets/cats.json
