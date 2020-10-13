@@ -11,4 +11,7 @@ class CatShowcase extends StatefulWidget {
 }
 
 class _CatShowcaseState extends State<CatShowcase>
-    with TickerProviderStateMixin {}
+    with TickerProviderStateMixin {
+  @override
+  Widget build(BuildContext context) {}
+}
