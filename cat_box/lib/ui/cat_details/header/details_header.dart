@@ -1,6 +1,8 @@
 import 'package:catbox/models/cat.dart';
+import 'package:catbox/ui/cat_details/header/cat_colored_image.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
+import 'package:catbox/ui/cat_details/header/cat_colored_image.dart';
 
 class CatDetailHeader extends StatefulWidget {
   final Cat cat;
@@ -16,10 +18,22 @@ class CatDetailHeader extends StatefulWidget {
 }
 
 class _CatDetailHeaderState extends State<CatDetailHeader> {
+  static const BACKGROUND_IMAGE = 'images/profile_header_background.png';
+
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     var textTheme = theme.textTheme;
+    var screenWidth = MediaQuery.of(context).size.width;
+    var diagonalBackground = new DiagonallyCutColoredImage(
+      new Image.asset(
+        BACKGROUND_IMAGE, // Or what you have named your image variable
+        width: screenWidth,
+        height: 280.0,
+        fit: BoxFit.cover,
+      ),
+      color: const Color(0xBB42A5F5),
+    );
 
     var avatar = new Hero(
         tag: widget.avatarTag,
@@ -88,7 +102,7 @@ class _CatDetailHeaderState extends State<CatDetailHeader> {
 
     return new Stack(
       children: [
-        // TODO Background image,
+        diagonalBackground,
         new Align(
           alignment: FractionalOffset.bottomCenter,
           heightFactor: 1.4,
